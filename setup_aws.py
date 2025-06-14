@@ -30,7 +30,6 @@ def createDynamodbTable():
             BillingMode='PAY_PER_REQUEST'
         )
         
-        print("テーブルを作成中...")
         table.wait_until_exists()
         print(f"テーブル '{table_name}' が作成されました。")
         return table
@@ -40,7 +39,6 @@ def createDynamodbTable():
         return None
 
 def main():
-    print("=== AWS環境セットアップ開始 ===")
     table = createDynamodbTable()
     
     if table:
