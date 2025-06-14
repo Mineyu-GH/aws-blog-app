@@ -1,2 +1,1 @@
 # aws-blog-app
-hello

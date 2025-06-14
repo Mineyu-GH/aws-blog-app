@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS-blog-app</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>AWS-blog-app</h1>
+            <nav>
+                <button id="list-btn" onclick="showSection('list')">記事一覧</button>
+                <button id="create-btn" onclick="showSection('create')">新規投稿</button>
+            </nav>
+        </header>
+
+        <main>
+            <section id="list-section">
+                <h2>記事一覧</h2>
+                <div id="message-container"></div>
+                <div id="posts-container">
+                    <p>読み込み中...</p>
+                </div>
+                <button onclick="loadPosts()">記事を再読み込み</button>
+            </section>
+
+            <section id="create-section" style="display: none;">
+                <h2>新規投稿</h2>
+                <div id="create-message-container"></div>
+                <form id="post-form">
+                    <div>
+                        <label for="title">タイトル:</label>
+                        <input type="text" id="title" name="title" required placeholder="記事のタイトルを入力してください">
+                    </div>
+                    <div>
+                        <label for="content">本文:</label>
+                        <textarea id="content" name="content" rows="10" required placeholder="記事の内容を入力してください"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit">投稿する</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
